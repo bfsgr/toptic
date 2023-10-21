@@ -3,11 +3,11 @@ import { ReactNode } from 'react'
 import logoImg from '../assets/logo.jpeg'
 
 interface Props {
-  type: 'aluno' | 'orientador' | 'coordenador' | 'secretaria'
+  title: string
   children: ReactNode
 }
 
-export default function Navigation({ children }: Props) {
+export default function Navigation({ children, title }: Props) {
   return (
     <Flex>
       <Flex
@@ -29,7 +29,7 @@ export default function Navigation({ children }: Props) {
           src={logoImg}
         />
         <Link size="6" weight="medium" underline="always">
-          Solicitações
+          {title}
         </Link>
       </Flex>
       <Flex direction="column" width="100%">
@@ -39,7 +39,7 @@ export default function Navigation({ children }: Props) {
           justify="between"
           style={{ borderBottom: '1px solid var(--gray-8)', padding: '0 16px' }}
         >
-          <Heading>Solicitações</Heading>
+          <Heading>{title}</Heading>
           <Avatar fallback="A"></Avatar>
         </Flex>
         {children}

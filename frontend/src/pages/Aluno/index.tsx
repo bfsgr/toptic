@@ -2,7 +2,7 @@ import Navigation from '../../components/Navigation'
 
 function Aluno() {
   return (
-    <Navigation type="aluno">
+    <Navigation title="Solicitações">
       <p>Hello</p>
     </Navigation>
   )
