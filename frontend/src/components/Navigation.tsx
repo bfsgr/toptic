@@ -1,6 +1,16 @@
-import { Avatar, Flex, Heading, Link } from '@radix-ui/themes'
-import { ReactNode } from 'react'
+import { ExitIcon, PersonIcon } from '@radix-ui/react-icons'
+import {
+  Avatar,
+  Flex,
+  Heading,
+  Link,
+  Popover,
+  Separator,
+} from '@radix-ui/themes'
+import { ReactNode, useContext } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import logoImg from '../assets/logo.jpeg'
+import { UserContext } from '../contexts/UserContext'
 
 interface Props {
   title: string
@@ -8,6 +18,10 @@ interface Props {
 }
 
 export default function Navigation({ children, title }: Props) {
+  const { user, logout } = useContext(UserContext)
+
+  if (!user) return null
+
   return (
     <Flex>
       <Flex
@@ -40,7 +54,49 @@ export default function Navigation({ children, title }: Props) {
           style={{ borderBottom: '1px solid var(--gray-8)', padding: '0 16px' }}
         >
           <Heading>{title}</Heading>
-          <Avatar fallback="A"></Avatar>
+
+          <Popover.Root>
+            <Popover.Trigger>
+              <Link>
+                <Avatar fallback={user.name[0]} />
+              </Link>
+            </Popover.Trigger>
+            <Popover.Content style={{ width: 200 }}>
+              <Flex direction="column" justify="center">
+                <Link
+                  style={{
+                    marginTop: '2px',
+                    width: '100%',
+                    display: 'flex',
+                    gap: '8px',
+                    alignItems: 'center',
+                  }}
+                >
+                  <PersonIcon />
+                  Meu perfil
+                </Link>
+                <Separator style={{ width: '100%', margin: '8px 0 8px' }} />
+                <Link
+                  color="red"
+                  asChild
+                  style={{
+                    marginTop: '2px',
+                    width: '100%',
+                    display: 'flex',
+                    gap: '8px',
+                    alignItems: 'center',
+                  }}
+                >
+                  <RouterLink to="/login" onClick={logout}>
+                    <ExitIcon />
+                    Sair
+                  </RouterLink>
+                </Link>
+
+                <Popover.Close />
+              </Flex>
+            </Popover.Content>
+          </Popover.Root>
         </Flex>
         {children}
       </Flex>
