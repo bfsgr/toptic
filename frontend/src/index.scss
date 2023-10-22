@@ -1,3 +1,68 @@
 body {
   margin: 0;
 }
+
+#root {
+  background-color: var(--indigo-a1);
+}
+
+.cardsTable {
+  margin: 16px 8px;
+
+  table {
+    width: 100%;
+    padding: 0 8px;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+  }
+
+  .rc-table-placeholder {
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+
+    td {
+      padding: 8px 0;
+      box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+    }
+  }
+
+  .rc-table-thead {
+    tr {
+      th {
+        text-align: start;
+      }
+
+      :first-child {
+        padding-left: 16px;
+      }
+
+      :last-child {
+        padding-right: 16px;
+      }
+    }
+  }
+
+  .rc-table-row {
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    .rc-table-cell {
+      padding: 8px 0;
+      background-color: white;
+    }
+
+    :first-child {
+      padding-left: 16px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    :last-child {
+      padding-right: 16px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}

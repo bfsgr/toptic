@@ -9,7 +9,7 @@ import {
 } from '@radix-ui/themes'
 import { ReactNode, useContext } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import logoImg from '../assets/logo.jpeg'
+import logoImg from '../assets/pcc.png'
 import { UserContext } from '../contexts/UserContext'
 
 interface Props {

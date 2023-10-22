@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { z } from 'zod'
-import logoImg from '../../assets/logo.jpeg'
+import logoImg from '../../assets/pcc.png'
 import { WithErrorMessage } from '../../components/WithErrorMessage'
 import { UserContext } from '../../contexts/UserContext'
 
@@ -63,7 +63,7 @@ export function Login() {
         maxHeight: '100vh',
         gap: '8px',
         padding: '0 8px',
-        backgroundColor: 'var(--purple-a1)',
+        backgroundColor: 'var(--indigo-a1)',
       }}
     >
       <Card size="3">
