@@ -51,6 +51,25 @@ body {
     .rc-table-cell {
       padding: 8px 0;
       background-color: white;
+
+      &.rc-table-cell-ellipsis {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        // Fixed first or last should special process
+        .rc-cell-fix-left-first,
+        .rc-cell-fix-left-last,
+        .rc-cell-fix-right-first .rc-cell-fix-right-last {
+          overflow: visible;
+
+          .rc-cell-content {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
     }
 
     :first-child {

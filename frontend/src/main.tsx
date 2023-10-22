@@ -10,6 +10,10 @@ import './index.scss'
 import Aluno from './pages/Aluno/index.tsx'
 import { ErrorPage } from './pages/ErrorBoundary/index.tsx'
 import { Login } from './pages/Login/index.tsx'
+import { Coordenadores } from './pages/Secretaria/Coordenadores.tsx'
+import { Discentes } from './pages/Secretaria/Discentes.tsx'
+import { Externos } from './pages/Secretaria/Externos.tsx'
+import { Orientadores } from './pages/Secretaria/Orientadores'
 import { Secretaria } from './pages/Secretaria/index.tsx'
 
 function authorize(role: string) {
@@ -53,7 +57,28 @@ const router = createBrowserRouter([
       {
         path: '/secretaria',
         loader: authorize('secretaria'),
-        element: <Secretaria />,
+        children: [
+          {
+            path: '',
+            element: <Secretaria />,
+          },
+          {
+            path: 'discentes',
+            element: <Discentes />,
+          },
+          {
+            path: 'orientadores',
+            element: <Orientadores />,
+          },
+          {
+            path: 'coordenadores',
+            element: <Coordenadores />,
+          },
+          {
+            path: 'externos',
+            element: <Externos />,
+          },
+        ],
       },
       {
         path: '/',

@@ -40,16 +40,16 @@ export function Secretaria() {
       <CardsTable
         columns={headers}
         emptyText="Nenhuma solicitação encontrada"
-        // data={[
-        //   {
-        //     id: 1,
-        //     discente: 'Bruno',
-        //     tipo: 'Defesa',
-        //     curso: 'Doutorado',
-        //     estado: 'Aguardando orientador',
-        //     atualizacao: new Date().toLocaleString(),
-        //   },
-        // ]}
+        data={[
+          {
+            id: 1,
+            discente: 'Bruno',
+            tipo: 'Defesa',
+            curso: 'Doutorado',
+            estado: 'Aguardando orientador',
+            atualizacao: new Date().toLocaleString(),
+          },
+        ]}
       />
     </Navigation>
   )
