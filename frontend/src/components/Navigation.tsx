@@ -46,6 +46,7 @@ export default function Navigation({ children, title }: Props) {
           maxHeight: '100vh',
           gap: '8px',
           padding: '0 8px',
+          justifyContent: 'stretch',
           alignItems: 'stretch',
         }}
       >

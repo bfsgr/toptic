@@ -1,4 +1,5 @@
-import { Badge } from '@radix-ui/themes'
+import { MagnifyingGlassIcon, PlusIcon } from '@radix-ui/react-icons'
+import { Badge, Button, Flex, TextField } from '@radix-ui/themes'
 import { ColumnsType } from 'rc-table/lib/interface'
 import { CardsTable } from '../../components/CardsTable'
 import Navigation from '../../components/Navigation'
@@ -51,6 +52,18 @@ export function Coordenadores() {
 
   return (
     <Navigation title="Coordenadores">
+      <Flex gap="2" style={{ margin: '8px 0', padding: '0 8px ' }}>
+        <TextField.Root style={{ width: '100%' }}>
+          <TextField.Slot>
+            <MagnifyingGlassIcon height="16" width="16" />
+          </TextField.Slot>
+          <TextField.Input placeholder="Busque por nome" />
+        </TextField.Root>
+        <Button variant="soft">
+          <PlusIcon height="16" width="16" />
+          Novo mandato
+        </Button>
+      </Flex>
       <CardsTable
         columns={headers}
         emptyText="Nenhum coordenador encontrado"
