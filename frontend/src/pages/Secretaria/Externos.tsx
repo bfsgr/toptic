@@ -52,6 +52,7 @@ export function Externos() {
         emptyText="Nenhum externo encontrado"
         data={[
           {
+            key: 1,
             id: 1,
             nome: 'Bruno',
             instituicao: 'UEL',

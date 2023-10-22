@@ -51,6 +51,7 @@ export function Discentes() {
         emptyText="Nenhum discente encontrado"
         data={[
           {
+            key: 1,
             id: 1,
             nome: 'Bruno',
             ra: '110098',

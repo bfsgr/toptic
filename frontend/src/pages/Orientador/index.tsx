@@ -54,6 +54,7 @@ function Orientador() {
         emptyText="Nenhuma solicitação encontrada"
         data={[
           {
+            key: 1,
             id: 1,
             discente: 'Bruno',
             tipo: 'Defesa',

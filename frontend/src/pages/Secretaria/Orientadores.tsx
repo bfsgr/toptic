@@ -51,6 +51,7 @@ export function Orientadores() {
         emptyText="Nenhum orientador encontrado"
         data={[
           {
+            key: 1,
             id: 1,
             nome: 'Bruno',
             email: 'ra110098@uem.br',

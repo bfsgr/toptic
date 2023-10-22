@@ -69,6 +69,7 @@ export function Coordenadores() {
         emptyText="Nenhum coordenador encontrado"
         data={[
           {
+            key: 1,
             id: 1,
             nome: 'Bruno',
             email: 'ra110098@uem.br',
