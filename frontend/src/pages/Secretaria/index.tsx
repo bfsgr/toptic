@@ -1,10 +1,11 @@
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import { Flex, TextField } from '@radix-ui/themes'
+import { ColumnsType } from 'rc-table/lib/interface'
 import { CardsTable } from '../../components/CardsTable'
 import Navigation from '../../components/Navigation'
 
 export function Secretaria() {
-  const headers = [
+  const headers: ColumnsType<Record<any, any>> = [
     {
       title: 'ID',
       dataIndex: 'id',
@@ -34,6 +35,7 @@ export function Secretaria() {
       title: 'Última atualização',
       dataIndex: 'atualizacao',
       key: 'atualizacao',
+      align: 'end',
     },
   ]
 

@@ -43,10 +43,10 @@ export function UserProvider({ children }: { children: ReactNode }) {
       email: 'orientador@uem.br',
       role: 'orientador',
     },
-    'coordernador@uem.br': {
+    'coordenador@uem.br': {
       id: 4,
       name: 'Coordenador 1',
-      email: 'coordernador@uem.br',
+      email: 'coordenador@uem.br',
       role: 'coordenador',
     },
   }

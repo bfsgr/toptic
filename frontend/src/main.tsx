@@ -8,8 +8,10 @@ import 'react-toastify/dist/ReactToastify.css'
 import { UserProvider } from './contexts/UserContext.tsx'
 import './index.scss'
 import Aluno from './pages/Aluno/index.tsx'
+import Coordenador from './pages/Coordenador/index.tsx'
 import { ErrorPage } from './pages/ErrorBoundary/index.tsx'
 import { Login } from './pages/Login/index.tsx'
+import Orientador from './pages/Orientador/index.tsx'
 import { Coordenadores } from './pages/Secretaria/Coordenadores.tsx'
 import { Discentes } from './pages/Secretaria/Discentes.tsx'
 import { Externos } from './pages/Secretaria/Externos.tsx'
@@ -53,6 +55,16 @@ const router = createBrowserRouter([
         path: '/aluno',
         loader: authorize('aluno'),
         element: <Aluno />,
+      },
+      {
+        path: '/orientador',
+        loader: authorize('orientador'),
+        element: <Orientador />,
+      },
+      {
+        path: '/coordenador',
+        // loader: authorize('coordenador'),
+        element: <Coordenador />,
       },
       {
         path: '/secretaria',

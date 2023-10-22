@@ -25,7 +25,7 @@ export default function Navigation({ children, title }: Props) {
   const sidebarOpts: Record<string, { label: string; href: string }[]> = {
     aluno: [{ label: 'Solicitações', href: '/aluno' }],
     orientador: [{ label: 'Solicitações', href: '/orientador' }],
-    coordenacao: [{ label: 'Solicitações', href: '/coordenacao' }],
+    coordenador: [{ label: 'Solicitações', href: '/coordenador' }],
     secretaria: [
       { label: 'Solicitações', href: '/secretaria' },
       { label: 'Discentes', href: '/secretaria/discentes' },

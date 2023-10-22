@@ -1,15 +1,20 @@
-import { MagnifyingGlassIcon, PlusIcon } from '@radix-ui/react-icons'
-import { Button, Flex, TextField } from '@radix-ui/themes'
+import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
+import { Flex, TextField } from '@radix-ui/themes'
 import { ColumnsType } from 'rc-table/lib/interface'
 import { CardsTable } from '../../components/CardsTable'
 import Navigation from '../../components/Navigation'
 
-function Aluno() {
+function Coordenador() {
   const headers: ColumnsType<Record<any, any>> = [
     {
       title: 'ID',
       dataIndex: 'id',
       key: 'id',
+    },
+    {
+      title: 'Discente',
+      dataIndex: 'discente',
+      key: 'discente',
     },
     {
       title: 'Tipo',
@@ -43,10 +48,6 @@ function Aluno() {
           </TextField.Slot>
           <TextField.Input placeholder="Busque por nome" />
         </TextField.Root>
-        <Button variant="soft">
-          <PlusIcon height="16" width="16" />
-          Criar nova
-        </Button>
       </Flex>
       <CardsTable
         columns={headers}
@@ -66,4 +67,4 @@ function Aluno() {
   )
 }
 
-export default Aluno
+export default Coordenador
