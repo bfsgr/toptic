@@ -1,7 +1,11 @@
 import { Card, Flex, Heading, Link, Text } from '@radix-ui/themes'
+import { useContext } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
+import { UserContext } from '../../contexts/UserContext'
 
 export function ErrorPage() {
+  const { logout } = useContext(UserContext)
+
   return (
     <Flex
       direction="column"
@@ -21,7 +25,9 @@ export function ErrorPage() {
           <Heading>Algo deu errado!</Heading>
           <Text>Tente novamente mais tarde</Text>
           <Link asChild>
-            <RouterLink to="/login">Voltar ao login</RouterLink>
+            <RouterLink to="/login" onClick={logout}>
+              Voltar ao login
+            </RouterLink>
           </Link>
         </Flex>
       </Card>

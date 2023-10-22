@@ -10,6 +10,7 @@ import './index.scss'
 import Aluno from './pages/Aluno/index.tsx'
 import { ErrorPage } from './pages/ErrorBoundary/index.tsx'
 import { Login } from './pages/Login/index.tsx'
+import { Secretaria } from './pages/Secretaria/index.tsx'
 
 function authorize(role: string) {
   return () => {
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
         path: '/aluno',
         loader: authorize('aluno'),
         element: <Aluno />,
+      },
+      {
+        path: '/secretaria',
+        loader: authorize('secretaria'),
+        element: <Secretaria />,
       },
       {
         path: '/',

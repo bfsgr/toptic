@@ -22,6 +22,19 @@ export default function Navigation({ children, title }: Props) {
 
   if (!user) return null
 
+  const sidebarOpts: Record<string, { label: string; href: string }[]> = {
+    aluno: [{ label: 'Solicitações', href: '' }],
+    orientador: [{ label: 'Solicitações', href: '' }],
+    coordenacao: [{ label: 'Solicitações', href: '' }],
+    secretaria: [
+      { label: 'Solicitações', href: '' },
+      { label: 'Discentes', href: 'discentes' },
+      { label: 'Orientadores', href: 'orientadores' },
+      { label: 'Coordenadores', href: 'coordenadores' },
+      { label: 'Externos', href: 'externos' },
+    ],
+  }
+
   return (
     <Flex>
       <Flex
@@ -42,9 +55,11 @@ export default function Navigation({ children, title }: Props) {
           style={{ marginLeft: 'auto', marginRight: 'auto' }}
           src={logoImg}
         />
-        <Link size="6" weight="medium" underline="always">
-          {title}
-        </Link>
+        {sidebarOpts[user.role].map(({ label, href }) => (
+          <Link asChild key={href} size="6" weight="medium" underline="always">
+            <RouterLink to={href}>{label}</RouterLink>
+          </Link>
+        ))}
       </Flex>
       <Flex direction="column" width="100%">
         <Flex
