@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon, PlusIcon } from '@radix-ui/react-icons'
 import { Badge, Button, Flex, TextField } from '@radix-ui/themes'
 import { ColumnsType } from 'rc-table/lib/interface'
+
 import { CardsTable } from '../../components/CardsTable'
 import Navigation from '../../components/Navigation'
 
