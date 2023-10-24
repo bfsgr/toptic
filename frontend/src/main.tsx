@@ -7,6 +7,7 @@ import { Slide, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { UserProvider } from './contexts/UserContext.tsx'
 import './index.scss'
+import { SolicitaBanca } from './pages/Aluno/SolicitaBanca.tsx'
 import Aluno from './pages/Aluno/index.tsx'
 import Coordenador from './pages/Coordenador/index.tsx'
 import { ErrorPage } from './pages/ErrorBoundary/index.tsx'
@@ -17,6 +18,7 @@ import { Discentes } from './pages/Secretaria/Discentes.tsx'
 import { Externos } from './pages/Secretaria/Externos.tsx'
 import { Orientadores } from './pages/Secretaria/Orientadores'
 import { Secretaria } from './pages/Secretaria/index.tsx'
+import './styles.css'
 
 function authorize(role: string) {
   return () => {
@@ -55,6 +57,11 @@ const router = createBrowserRouter([
         path: '/aluno',
         loader: authorize('aluno'),
         element: <Aluno />,
+      },
+      {
+        path: '/aluno/solicitacao',
+        loader: authorize('aluno'),
+        element: <SolicitaBanca />,
       },
       {
         path: '/orientador',

@@ -43,7 +43,6 @@ export default function Navigation({ children, title }: Props) {
           width: '210px',
           borderRight: '1px solid var(--gray-8)',
           minHeight: '100vh',
-          maxHeight: '100vh',
           gap: '8px',
           padding: '0 8px',
           justifyContent: 'stretch',

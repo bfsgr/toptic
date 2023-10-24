@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon, PlusIcon } from '@radix-ui/react-icons'
-import { Button, Flex, TextField } from '@radix-ui/themes'
+import { Button, Flex, Link, TextField } from '@radix-ui/themes'
 import { ColumnsType } from 'rc-table/lib/interface'
+import { Link as RouterLink } from 'react-router-dom'
 import { CardsTable } from '../../components/CardsTable'
 import Navigation from '../../components/Navigation'
 
@@ -43,10 +44,14 @@ function Aluno() {
           </TextField.Slot>
           <TextField.Input placeholder="Busque por nome" />
         </TextField.Root>
-        <Button variant="soft">
-          <PlusIcon height="16" width="16" />
-          Criar nova
-        </Button>
+        <Link asChild>
+          <RouterLink to="/aluno/solicitacao">
+            <Button variant="soft" style={{ width: '120px' }}>
+              <PlusIcon height="16" width="16" />
+              Criar nova
+            </Button>
+          </RouterLink>
+        </Link>
       </Flex>
       <CardsTable
         columns={headers}
