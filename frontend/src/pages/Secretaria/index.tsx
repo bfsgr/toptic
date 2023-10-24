@@ -75,7 +75,7 @@ export function Secretaria() {
     setData([])
     if (search)
       api
-        .get(`http://localhost:4000/solicitacoes/${search}`)
+        .get(`/solicitacoes/${search}`)
         .then((res) => {
           setData(res.data)
         })
@@ -93,7 +93,7 @@ export function Secretaria() {
     setIsLoading(true)
     setData([])
     api
-      .get('http://localhost:4000/solicitacoes')
+      .get('/solicitacoes')
       .then((res) => {
         setData(res.data)
       })

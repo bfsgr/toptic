@@ -78,7 +78,7 @@ export function Coordenadores() {
     setData([])
     if (search)
       api
-        .get(`http://localhost:4000/coordenadores/${search}`)
+        .get(`/coordenadores/${search}`)
         .then((res) => {
           setData(res.data)
         })
@@ -96,7 +96,7 @@ export function Coordenadores() {
     setIsLoading(true)
     setData([])
     api
-      .get('http://localhost:4000/coordenadores')
+      .get('/coordenadores')
       .then((res) => {
         setData(res.data)
       })

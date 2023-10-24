@@ -59,7 +59,7 @@ export function Orientadores() {
     setData([])
     if (search)
       api
-        .get(`http://localhost:4000/orientadores/${search}`)
+        .get(`/orientadores/${search}`)
         .then((res) => {
           setData(res.data)
         })
@@ -77,7 +77,7 @@ export function Orientadores() {
     setIsLoading(true)
     setData([])
     api
-      .get('http://localhost:4000/orientadores')
+      .get('/orientadores')
       .then((res) => {
         setData(res.data)
       })

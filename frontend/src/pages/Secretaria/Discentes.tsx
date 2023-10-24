@@ -58,7 +58,7 @@ export function Discentes() {
     setData([])
     if (search)
       api
-        .get(`http://localhost:4000/alunos/${search}`)
+        .get(`/alunos/${search}`)
         .then((res) => {
           setData(res.data)
         })
@@ -76,7 +76,7 @@ export function Discentes() {
     setIsLoading(true)
     setData([])
     api
-      .get('http://localhost:4000/alunos')
+      .get('/alunos')
       .then((res) => {
         setData(res.data)
       })
